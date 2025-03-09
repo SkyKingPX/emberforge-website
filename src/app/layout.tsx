@@ -2,6 +2,7 @@ import {Metadata} from "next";
 import {ReactNode} from "react";
 import "@styles/tailwind.css";
 import Header from "@components/header";
+import StyledComponentsRegistry from "@/registry";
 
 export const metadata: Metadata = {
 	title: "EmberForge",
@@ -12,9 +13,11 @@ export default function RootLayout({children}: Readonly<{children: ReactNode}>) 
 	return (
 		<html lang="en">
 			<body className={"bg-stone-100 dark:bg-stone-950 text-black dark:text-white"}>
-				<Header/>
+				<StyledComponentsRegistry>
+					<Header/>
 
-				{children}
+					{children}
+				</StyledComponentsRegistry>
 			</body>
 		</html>
 	);

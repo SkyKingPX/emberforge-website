@@ -10,7 +10,7 @@ const StyledNav = styled.nav`
 	justify-content: space-between;
 
 	margin: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
-	
+
 	@media (max-width: 1000px) {
 		grid-template-columns: repeat(2, auto);
 	}
@@ -33,33 +33,33 @@ const StyledNav = styled.nav`
 			display: none;
 		}
 	}
-`
+`;
 
 const StyledLink = styled(Link)`
 	width: fit-content;
-	
+
 	padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
-	
+
 	transition: background-color var(--default-transition-duration) var(--default-transition-timing-function);
-	
+
 	border-radius: var(--radius-lg);
-	
+
 	&:hover {
 		background-color: rgba(0, 0, 0, 0.3);
-		
+
 		@media (prefers-color-scheme: dark) {
 			background-color: rgba(255, 255, 255, 0.3);
 		}
 	}
-	
+
 	&:active {
 		background-color: rgba(0, 0, 0, 0.2);
-		
+
 		@media (prefers-color-scheme: dark) {
 			background-color: rgba(255, 255, 255, 0.2);
 		}
 	}
-`
+`;
 
 export default function Header() {
 	// TODO: Add a hamburger menu for mobile
@@ -81,5 +81,5 @@ export default function Header() {
 			</StyledNav>
 			<hr/>
 		</header>
-	)
+	);
 }

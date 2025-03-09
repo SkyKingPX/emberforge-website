@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@base-ui-components/react": "^1.0.0-alpha.6",
     "@tailwindcss/postcss": "^4.0.12",
     "next": "15.2.1",
     "postcss": "^8.5.3",

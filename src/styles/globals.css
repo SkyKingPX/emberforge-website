@@ -1,0 +1,75 @@
+:root {
+	--clr-bg-primary: #fff;
+	--clr-bg-secondary: #f0f0f0;
+
+	--clr-text-primary: #000;
+
+	--clr-highlight: rgba(0, 0, 0, 0.3);
+
+	@media (prefers-color-scheme: dark) {
+		--clr-bg-primary: #000;
+		--clr-bg-secondary: #111;
+
+		--clr-text-primary: #fff;
+
+		--clr-highlight: rgba(255, 255, 255, 0.3);
+	}
+}
+
+/* Wrapper */
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: var(--clr-bg-primary);
+	color: var(--clr-text-primary);
+
+	font-family: Roboto, sans-serif;
+
+	/* Anti-aliasing */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+img {
+	width: unset;
+	height: unset;
+}
+
+/* Components */
+
+.btn {
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+
+	transition: background-color 0.2s ease;
+
+	&:hover {
+		background-color: var(--clr-highlight);
+	}
+}
+
+/* Utilities */
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}

@@ -8,55 +8,52 @@ const StyledNav = styled.nav`
 	display: grid;
 	grid-template-columns: 1fr auto 1fr;
 	justify-content: space-between;
+	align-items: center;
 
-	margin: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+	margin: .5rem 1rem;
 
+	.logo {
+		display: flex;
+		flex-direction: row;
+
+		align-items: center;
+
+		img {
+			height: 4em;
+			aspect-ratio: 1/1;
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+	}
+	
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		
+		font-size: 1.2em;
+	}
+	
 	@media (max-width: 1000px) {
 		grid-template-columns: repeat(2, auto);
 	}
 
-	@media (max-width: 700px) {
+	@media (max-width: 750px) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
-		margin: calc(var(--spacing) * 4);
-		gap: calc(var(--spacing) * 2);
+		
+		gap: 1rem;
 	}
 
 	@media (max-width: 450px) {
 		align-items: flex-start;
 
-		margin: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
-
 		ul {
 			display: none;
-		}
-	}
-`;
-
-const StyledLink = styled(Link)`
-	width: fit-content;
-
-	padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
-
-	transition: background-color var(--default-transition-duration) var(--default-transition-timing-function);
-
-	border-radius: var(--radius-lg);
-
-	&:hover {
-		background-color: rgba(0, 0, 0, 0.3);
-
-		@media (prefers-color-scheme: dark) {
-			background-color: rgba(255, 255, 255, 0.3);
-		}
-	}
-
-	&:active {
-		background-color: rgba(0, 0, 0, 0.2);
-
-		@media (prefers-color-scheme: dark) {
-			background-color: rgba(255, 255, 255, 0.2);
 		}
 	}
 `;
@@ -66,17 +63,17 @@ export default function Header() {
 	return (
 		<header>
 			<StyledNav>
-				<StyledLink href={"/"}>
-					<div className={"flex flex-row items-center"}>
-						<Image src={logo} alt={"EmberForge Logo"} className={"size-12"}/>
-						<h1 className={"text-2xl"}>EmberForge</h1>
+				<Link href={"/"} className={"btn"}>
+					<div className={"logo"}>
+						<Image src={logo} alt={"EmberForge Logo"}/>
+						<h1>EmberForge</h1>
 					</div>
-				</StyledLink>
-				<ul className={"flex flex-row gap-8 items-center justify-self-center"}>
-					<li><StyledLink href={"/"}>Home</StyledLink></li>
-					<li><StyledLink href={"/team"}>Team</StyledLink></li>
-					<li><StyledLink href={"#"}>Projects</StyledLink></li>
-					<li><StyledLink href={"#"}>Contact</StyledLink></li>
+				</Link>
+				<ul>
+					<li><Link href={"/"} className={"btn"}>Home</Link></li>
+					<li><Link href={"/team"} className={"btn"}>Team</Link></li>
+					<li><Link href={"#"} className={"btn"}>Projects</Link></li>
+					<li><Link href={"#"} className={"btn"}>Contact</Link></li>
 				</ul>
 			</StyledNav>
 			<hr/>

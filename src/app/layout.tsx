@@ -1,5 +1,5 @@
 import {Metadata} from "next";
-import {ReactNode} from "react";
+import {ReactNode, Suspense} from "react";
 import "@styles/tailwind.css";
 import Header from "@components/header";
 import StyledComponentsRegistry from "@/registry";
@@ -16,7 +16,9 @@ export default function RootLayout({children}: Readonly<{children: ReactNode}>) 
 				<StyledComponentsRegistry>
 					<Header/>
 
-					{children}
+					<Suspense>
+						{children}
+					</Suspense>
 				</StyledComponentsRegistry>
 			</body>
 		</html>

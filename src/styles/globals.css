@@ -61,15 +61,3 @@ img {
 		background-color: var(--clr-highlight);
 	}
 }
-
-/* Utilities */
-
-.flex-col {
-	display: flex;
-	flex-direction: column;
-}
-
-.flex-row {
-	display: flex;
-	flex-direction: row;
-}

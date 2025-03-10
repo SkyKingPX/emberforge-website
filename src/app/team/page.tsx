@@ -3,7 +3,7 @@ import {PageSection} from "@components/layoutStyles";
 import styled from "styled-components";
 import Link from "next/link";
 import {Fragment, useEffect, useState} from "react";
-import {useSearchParams} from "next/navigation";
+import {useRouter, useSearchParams} from "next/navigation";
 
 type member = {
 	name: string;
@@ -133,6 +133,68 @@ export default function Team() {
 					}
 				</Grid>
 			</PageSection>
+			<MemberDialog member={selectedMember} open={memberParam !== null}/>
 		</Fragment>
+	);
+}
+
+/* Dialog */
+
+const Dialog = styled.div`
+	display: block;
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	
+	width: 100%;
+	height: 100%;
+	
+	justify-items: center;
+	align-content: center;
+	
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	&.open {
+		pointer-events: all;
+		opacity: 100%;
+	}
+	
+	.background {
+		backdrop-filter: blur(5px);
+		background-color: rgba(0, 0, 0, 0.25);
+		
+		width: 100%;
+		height: 100%;
+	}
+`
+
+const DialogContent = styled.div`
+	background-color: var(--clr-bg-primary);
+	
+	border-radius: 1rem;
+	border: 1px solid var(--clr-bg-secondary);
+	
+	padding: 1rem;
+	
+	z-index: 1;
+`
+
+function MemberDialog({member, open}: {member: member, open: boolean}) {
+	const router = useRouter();
+
+	function close() {
+		router.push("?")
+	}
+
+	return (
+		<Dialog className={open ? "open" : ""}>
+			<div className={"background"} onClick={close}/>
+			<DialogContent>
+				Hello
+			</DialogContent>
+		</Dialog>
 	);
 }

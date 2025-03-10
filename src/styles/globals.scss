@@ -14,6 +14,11 @@
 
 		--clr-highlight: rgba(255, 255, 255, 0.3);
 	}
+
+	/* Variables */
+
+	--page-section-width-medium: 100rem;
+	--page-section-width-large: 120rem;
 }
 
 /* Wrapper */
@@ -60,4 +65,20 @@ img {
 	&:hover {
 		background-color: var(--clr-highlight);
 	}
+}
+
+%page-section {
+	width: 100%;
+	padding: 1rem;
+	justify-self: center;
+}
+
+.page-section-medium {
+	@extend %page-section;
+	max-width: var(--page-section-width-medium);
+}
+
+.page-section-large {
+	@extend %page-section;
+	max-width: var(--page-section-width-large);
 }

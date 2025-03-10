@@ -1,6 +1,6 @@
 import {Metadata} from "next";
 import {ReactNode, Suspense} from "react";
-import "@styles/globals.css";
+import "@styles/globals.scss";
 import Header from "@components/header";
 import StyledComponentsRegistry from "@/registry";
 

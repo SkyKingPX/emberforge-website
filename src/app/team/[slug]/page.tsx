@@ -18,7 +18,7 @@ export default async function MemberPage({params}: Props) {
 	return (
 		<Fragment>
 			<div className={`${styles.profileSection} page-section-medium`}>
-				<Image src={member.image} alt={member.name} width={128} height={128} style={{borderRadius: "100rem"}}/>
+				<Image src={member.image} alt={member.name} width={128} height={128} style={{borderRadius: "100rem", objectFit: "cover", width: "128px", aspectRatio: 1}}/>
 				<div style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
 					<h1>{member.name}</h1>
 					<p><strong>Roles:</strong> {member.role.join(" | ")}</p>

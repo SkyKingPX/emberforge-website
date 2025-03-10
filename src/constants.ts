@@ -13,7 +13,7 @@ export const team_members: MemberModel[] = [
 		name: "Banikula",
 		slug: "banikula",
 		role: ["Organization Manager", "Mod Developer", "Tester", "Support Team"],
-		image: "https://cdn.discordapp.com/avatars/497828126366367764/95baa23bb66c77cf49d6d821b678092b?size=1024",
+		image: "/team/profiles/banikula.jpg",
 		bio: "John is the founder of EmberForge and has over 10 years of experience in the tech industry.",
 	},
 	{

@@ -39,7 +39,7 @@ export default function TeamPage() {
 	function Member({member}: {member: MemberModel}) {
 		return (
 			<MemberButton href={`team/${member.slug}`} className={"btn"}>
-				<Image src={member.image} alt={member.name} width={128} height={128} style={{borderRadius: "100rem"}}/>
+				<Image src={member.image} alt={member.name} width={128} height={128} style={{borderRadius: "100rem", objectFit: "cover", width: "128px", aspectRatio: 1}}/>
 				<p style={{fontWeight: "bold", fontSize: "1.5em"}}>{member.name}</p>
 				<p>{member.role[0]}</p>
 			</MemberButton>

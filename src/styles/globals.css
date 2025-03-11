@@ -67,18 +67,16 @@ img {
 	}
 }
 
-%page-section {
+.page-section-medium {
 	width: 100%;
+	max-width: var(--page-section-width-medium);
 	padding: 1rem;
 	justify-self: center;
 }
 
-.page-section-medium {
-	@extend %page-section;
-	max-width: var(--page-section-width-medium);
-}
-
 .page-section-large {
-	@extend %page-section;
+	width: 100%;
 	max-width: var(--page-section-width-large);
+	padding: 1rem;
+	justify-self: center;
 }

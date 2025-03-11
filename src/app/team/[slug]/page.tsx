@@ -2,7 +2,7 @@ import {team_members} from "@/constants";
 import {notFound} from "next/navigation";
 import {Fragment} from "react";
 import Image from "next/image";
-import styles from "@styles/pages/memberSite.module.scss"
+import styles from "@styles/pages/memberSite.module.css"
 
 interface Props {
 	params: Promise<{
